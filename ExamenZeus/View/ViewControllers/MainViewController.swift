@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     }()
     
     private var imagePicker: UIImagePickerController!
-    private var takeSelfie: UIImageView!
+    private var takeSelfie: UIImageView?
     private var viewModel: MainViewModelDelegate!
     
     init(viewModel: MainViewModelDelegate) {
@@ -34,12 +34,25 @@ class MainViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupTableView()
         constraints()
+        setButton()
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
+    }
+    
+    private func setButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Color", style: .plain, target: self, action: #selector(addTapped))
+    }
+    
+    @objc private func addTapped() {
+        viewModel.getColor(completionSuccess: { [weak self] screenColor in
+            self?.tableView.backgroundColor = UIColor(named: screenColor.color)
+        }, completionFailure: { [weak self] error in
+            self?.showAlert(title: error.localizedDescription)
+        })
     }
     
     func constraints() {
@@ -118,7 +131,7 @@ extension MainViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
-        takeSelfie.image = image
+        takeSelfie?.image = image
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

@@ -9,4 +9,5 @@ import Foundation
 
 protocol ReportServiceDelegate {
     func getReport<T: Decodable>(completion: @escaping ResultCallback<T>)
+    func getColor<T: Decodable>(completion: @escaping ResultCallback<T>)
 }

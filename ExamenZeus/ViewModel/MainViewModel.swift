@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 final class MainViewModel: MainViewModelDelegate {
     
@@ -42,6 +43,17 @@ final class MainViewModel: MainViewModelDelegate {
             break
         }
         return cell
+    }
+    
+    func getColor(completionSuccess: @escaping (ScreenColor) -> Void?, completionFailure: @escaping (Error) -> Void?) {
+        reportService.getColor(completion: { (result: Result<ScreenColor>) in
+            switch result {
+            case .success(let resultReport):
+                completionSuccess(resultReport)
+            case .failure(let error):
+                completionFailure(error)
+            }
+        })
     }
     
 }
