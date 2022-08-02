@@ -43,6 +43,10 @@
 		046B44D928970A8800086270 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 046B44D828970A8800086270 /* FirebaseFirestore */; };
 		046B44DB28970A8800086270 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 046B44DA28970A8800086270 /* FirebaseStorage */; };
 		046B44DD28971A5200086270 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046B44DC28971A5200086270 /* Screen.swift */; };
+		04CE711B2898E1E400B4C386 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE711A2898E1E400B4C386 /* User.swift */; };
+		04CE711D2898F0F300B4C386 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE711C2898F0F300B4C386 /* CustomError.swift */; };
+		04CE711F2898F47C00B4C386 /* String+IsNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE711E2898F47B00B4C386 /* String+IsNil.swift */; };
+		04CE7121289903E500B4C386 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE7120289903E500B4C386 /* PhotoViewController.swift */; };
 		3F61437DEDDAE3410F6A986E /* Pods_ExamenZeus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4998F2E9C5F54F72E59EC9C5 /* Pods_ExamenZeus.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +104,10 @@
 		046B44CB2896560800086270 /* SupervisionViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisionViewModelDelegate.swift; sourceTree = "<group>"; };
 		046B44CF2897088B00086270 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		046B44DC28971A5200086270 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		04CE711A2898E1E400B4C386 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04CE711C2898F0F300B4C386 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		04CE711E2898F47B00B4C386 /* String+IsNil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+IsNil.swift"; sourceTree = "<group>"; };
+		04CE7120289903E500B4C386 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		11E4657F7307C2B2B0CAE115 /* Pods-ExamenZeus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamenZeus.release.xcconfig"; path = "Target Support Files/Pods-ExamenZeus/Pods-ExamenZeus.release.xcconfig"; sourceTree = "<group>"; };
 		14BBF601074CBC77A2D48AE9 /* Pods-ExamenZeus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExamenZeus.debug.xcconfig"; path = "Target Support Files/Pods-ExamenZeus/Pods-ExamenZeus.debug.xcconfig"; sourceTree = "<group>"; };
 		4998F2E9C5F54F72E59EC9C5 /* Pods_ExamenZeus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExamenZeus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +218,7 @@
 				04221597289615CA00242627 /* ResultReport.swift */,
 				042215992896160D00242627 /* Company.swift */,
 				046B44DC28971A5200086270 /* Screen.swift */,
+				04CE711A2898E1E400B4C386 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +239,7 @@
 				042215012895990600242627 /* SceneDelegate.swift */,
 				042214FF2895990600242627 /* AppDelegate.swift */,
 				042215802895E94400242627 /* Constants.swift */,
+				04CE711C2898F0F300B4C386 /* CustomError.swift */,
 			);
 			path = Communs;
 			sourceTree = "<group>";
@@ -248,6 +258,7 @@
 			children = (
 				042215032895990600242627 /* MainViewController.swift */,
 				0422159E28961F9200242627 /* SupervisionViewController.swift */,
+				04CE7120289903E500B4C386 /* PhotoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 			children = (
 				042215832895F43200242627 /* Regex.swift */,
 				04221585289603B600242627 /* ViewController+ShowAlert.swift */,
+				04CE711E2898F47B00B4C386 /* String+IsNil.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -510,6 +522,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CE7121289903E500B4C386 /* PhotoViewController.swift in Sources */,
+				04CE711B2898E1E400B4C386 /* User.swift in Sources */,
 				0422159D2896175900242627 /* ReportEndpoint.swift in Sources */,
 				0422159F28961F9200242627 /* SupervisionViewController.swift in Sources */,
 				046B44CA2896522D00086270 /* SupervisionViewModel.swift in Sources */,
@@ -523,9 +537,11 @@
 				0422158D289613C900242627 /* Endpoint.swift in Sources */,
 				0422158F2896141500242627 /* Result.swift in Sources */,
 				04221586289603B600242627 /* ViewController+ShowAlert.swift in Sources */,
+				04CE711D2898F0F300B4C386 /* CustomError.swift in Sources */,
 				042215722895BED400242627 /* CustomTableViewCell.swift in Sources */,
 				042215002895990600242627 /* AppDelegate.swift in Sources */,
 				042215842895F43200242627 /* Regex.swift in Sources */,
+				04CE711F2898F47C00B4C386 /* String+IsNil.swift in Sources */,
 				0422158B289613A600242627 /* NetworkTaskManager.swift in Sources */,
 				042215022895990600242627 /* SceneDelegate.swift in Sources */,
 				046B44BE2896455D00086270 /* SupervisionTableViewCell.swift in Sources */,
@@ -702,9 +718,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = ExamenZeus/info.plist;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExamenZeus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -718,6 +736,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = carolina.carapia.ExamenZeus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -730,9 +749,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = ExamenZeus/info.plist;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExamenZeus/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -746,6 +767,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = carolina.carapia.ExamenZeus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

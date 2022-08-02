@@ -11,6 +11,10 @@ import FirebaseFirestore
 final class MainViewModel: MainViewModelDelegate {
     
     private var reportService: ReportServiceDelegate
+
+    private var image: String? {
+        reportService.loadSelfie()
+    }
     
     init(service: ReportServiceDelegate) {
         self.reportService = service
@@ -54,6 +58,30 @@ final class MainViewModel: MainViewModelDelegate {
                 completionFailure(error)
             }
         })
+    }
+    
+    func saveSelfie(image: UIImage) {
+        reportService.saveSelfie(image)
+    }
+    
+    func sendUser( _ tableView: UITableView, completionFailure: @escaping (CustomError) -> Void?) {
+        
+        let index = IndexPath(row: TypeCell.textField.rawValue, section: 0)
+        let cell = tableView.cellForRow(at: index) as! CustomTableViewCell
+        
+        guard let name = cell.textField.text, !name.isNil else {
+            completionFailure(CustomError.invalidName)
+            return
+        }
+        
+        guard let image = image else {
+            completionFailure(CustomError.invalidImage)
+            return
+        }
+    
+        let user = User(name: name, selfie: image)
+        reportService.sendUser(user)
+        
     }
     
 }
