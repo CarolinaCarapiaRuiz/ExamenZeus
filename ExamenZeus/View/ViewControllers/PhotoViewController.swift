@@ -12,14 +12,13 @@ final class PhotoViewController: UIViewController {
     private var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
-    private var image: UIImage
-    
     init(image: UIImage) {
-        self.image = image
         super.init(nibName: nil, bundle: nil)
+        self.imageView.image = image
     }
     
     required init?(coder: NSCoder) {
@@ -29,8 +28,7 @@ final class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(imageView)
-        imageView.image = image
-        constraints()
+        self.constraints()
     }
     
     func constraints() {

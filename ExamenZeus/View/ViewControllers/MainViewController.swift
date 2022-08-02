@@ -134,7 +134,7 @@ extension MainViewController: UITableViewDelegate, UINavigationControllerDelegat
         showAlert(title: Constants.titleAlertSelfie, simpleAlert: false, titleActionOne: Constants.takePhoto, handerActionOne: { [weak self] in
             self?.takePhoto()
         }, titleActionTwo: Constants.viewLibrary, handerActionTwo: { [weak self] in
-            self?.viewPhotoLibrary()
+            self?.viewPhoto()
         })
     }
     
@@ -145,7 +145,7 @@ extension MainViewController: UITableViewDelegate, UINavigationControllerDelegat
         present(imagePicker, animated: true)
     }
     
-    private func viewPhotoLibrary() {
+    private func viewPhoto() {
         guard let image = viewModel.image else { return }
         let viewController = PhotoViewController(image: image)
         navigationController?.pushViewController(viewController, animated: true)
