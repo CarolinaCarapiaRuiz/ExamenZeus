@@ -146,14 +146,12 @@ extension MainViewController: UITableViewDelegate, UINavigationControllerDelegat
     }
     
     private func viewPhotoLibrary() {
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true)
+        guard let image = viewModel.image else { return }
+        let viewController = PhotoViewController(image: image)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc private func sendUser(_ sender: UIButton) {
-        
         viewModel.sendUser(tableView, completionFailure: {[weak self] error in
             self?.showAlert(title: error.description)
         })

@@ -59,11 +59,11 @@ final class ReportService: ReportServiceDelegate {
         UserDefaults.standard.set(encoded, forKey: "selfie")
     }
     
-    func loadSelfie() -> String? {
-        guard let data = UserDefaults.standard.data(forKey: "selfie") else { return nil }
+    func loadSelfie() -> UIImage? {
+        guard let data = UserDefaults.standard.data(forKey: "selfie") else { return UIImage(named: "astronauta") }
         let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
-        guard let image = UIImage(data: decoded) else { return nil }
-        return "\(image)"
+        guard let image = UIImage(data: decoded) else { return UIImage(named: "astronauta") }
+        return image
     }
     
     func sendUser(_ user: User) {

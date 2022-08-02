@@ -11,6 +11,6 @@ protocol ReportServiceDelegate {
     func getReport<T: Decodable>(completion: @escaping ResultCallback<T>)
     func getColor<T: Decodable>(completion: @escaping ResultCallback<T>)
     func saveSelfie(_ image: UIImage)
-    func loadSelfie() -> String?
+    func loadSelfie() -> UIImage?
     func sendUser(_ user: User)
 }

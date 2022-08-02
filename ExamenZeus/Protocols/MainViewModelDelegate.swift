@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainViewModelDelegate {
-    
+    var image: UIImage? { get }
     func getColor(completionSuccess: @escaping (ScreenColor) -> Void?, completionFailure: @escaping (Error) -> Void?)
     
     func getReport(completionSuccess: @escaping (ResultReport) -> Void?, completionFailure: @escaping (Error) -> Void?)

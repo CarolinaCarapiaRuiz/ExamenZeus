@@ -12,7 +12,7 @@ final class MainViewModel: MainViewModelDelegate {
     
     private var reportService: ReportServiceDelegate
 
-    private var image: String? {
+    var image: UIImage? {
         reportService.loadSelfie()
     }
     
@@ -79,7 +79,7 @@ final class MainViewModel: MainViewModelDelegate {
             return
         }
     
-        let user = User(name: name, selfie: image)
+        let user = User(name: name, selfie: "\(image)")
         reportService.sendUser(user)
         
     }
