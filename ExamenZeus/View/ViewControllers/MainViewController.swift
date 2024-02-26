@@ -164,6 +164,7 @@ extension MainViewController: UIImagePickerControllerDelegate {
         guard let image = info[.originalImage] as? UIImage else { return }
         takeSelfie?.image = image
         viewModel.saveSelfie(image: image)
+        imagePicker.dismiss(animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
